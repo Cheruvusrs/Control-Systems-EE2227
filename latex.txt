@@ -1,0 +1,66 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{graphicx}
+
+\renewcommand{\baselinestretch}{1.2}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\title{Control Systems 2019 GATE Question}
+\author{name-C.Sriram Saran \\*ROLLNO-EE18BTECH11007}
+\centering
+
+\begin{document}
+
+\maketitle
+\begin{frame}{QUESTION(2019 GATE EE Question no 14)}
+\begin{itemize}
+\item The open loop transfer function of a unity feedback system is given by
+\begin{align*}
+ G(s)=\frac{\pi e^{-0.25s}}{s}
+\end{align*}
+in G(s) plane,the Nyquist plot of G(s) passes through the negative real axis at the point
+\\*(A)(-0.5,j0)  (B)(-0.75,j0)  (C)(-1.25,j0)  (D)(-1.5,j0)
+
+
+ 
+\end{itemize}
+\end{frame}
+\begin{frame}{SOLUTION}
+\begin{itemize}
+
+
+\begin{equation*}
+
+G(s)=\frac{\pi e^{-0.25s}}{s}
+
+\end{equation*}
+ Nyquist plot cuts the negative real
+Axis at $\omega$ = phase cross over frequency
+\newline \(G(j\omega)=\frac{\pi}{\omega}(-\sin{0.25$\omega$}-j\cos{0.25$\omega$})\)
+\newline \angle G(j$\omega$)=-90\degree-0.25$\omega$\times180\degree/$\pi$
+\newline\angle G(j$\omega$)|$_{\omega=\omega_{pc}}$=-180\degree
+\newline by solving for $\omega$ we get $\omega_{pc}=2\pi$
+\newline magnitude at any point is X=$|G(j\omega)|$=$\frac{\pi}{\omega}$
+\newline substituting $\omega=2\pi$ in magnitude we get X=0.5
+\newline hence it intersects at (-0.5,0j) so answer is A
+
+\end{itemize}
+\end{frame}
+\begin{frame}{plot verification}
+\newline we can verify with the following plot that it intersects at (-0.5,0j)
+\begin{figure}
+  \includegraphics[width=\linewidth]{nyquist.png}
+  \caption{A boat.}
+  \label{fig:boat1}
+\end{figure}
+\begin{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
