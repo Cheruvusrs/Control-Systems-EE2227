@@ -6,8 +6,8 @@ import math
 import matplotlib.pyplot as plt
 omega=np.linspace(-1000,1000,2000)# our desired range of omega values
 from scipy import signal
-zeros=[]#a list containing zeros of G(s)
-poles=[0]#a list containing poles of G(s)
+zeros=[]#a this list contains zeros of G(s)
+poles=[0]#a this list contains poles of G(s)
 H_s=signal.ZerosPolesGain(zeros,poles,1) # feed zeros and poles as inputs to this function to get H_s which is a transfer function with GAIN=1
 w,H=signal.freqresp(H_s,w=omega)#feed H_s and omega values as inputs to this funtion it will return frequency response H of H_s and w the range of omega values of H
 s=1j*w#make s=jw substitution
