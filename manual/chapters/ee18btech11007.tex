@@ -71,7 +71,7 @@ X=|G(j\omega)|=\frac{\pi}{\omega}.
 \item Use Nyquist stability criterion to determine if the system is stable?
 \newline
 \solution
- \textbf{Nyquist Stability Criterion} - for  the stability of a closed loop transfer function G(s)/(1+G(s)*H(s)) ,the number of poles of G(s)*H(s) on right half of s-plane must equal the number of encirclement of nyquist contour of  G(s)*H(s) about the critical point -1+0j
+ \textbf{Nyquist Stability Criterion} - for  the stability of a closed loop transfer function G(s)/(1+G(s)*H(s)) ,the number of poles of G(s)*H(s) on right half of s-plane must equal the number of encirclement of nyquist plot of  G(s)*H(s) about the critical point -1+0j
 \\
 \newline we must find
 \begin{align}
@@ -98,6 +98,7 @@ Z=P+N
 \item If a clockwise contour does not encircle zeros nor poles, then the plot will not encircle the origin.
 \item If a clockwise contour encircles a zero, then the plot will encircle the origin clockwise once.
 \item If a clockwise contour encircles a pole, then the plot will encircle the origin counterclockwise once.
+\item clockwise encirclement of nyquist plot is taken as positive and  counterclockwise encirclement of nyquist plot is taken as negative
 \end{itemize}
 \\
 \newline from plot we get N=0 because there are no encirclements about -1+0j,and we already know P=0 since our G(s) doesnt have any poles on right half of s-plane
@@ -109,4 +110,3 @@ $\therefore$ the system is stable.
 
 
 \end{enumerate}
-
