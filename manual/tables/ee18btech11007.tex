@@ -1,111 +1,226 @@
-\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
-\numberwithin{equation}{enumi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  This is the header of a LaTeX2e file exported from Gnumeric.    %%
+%%                                                                  %%
+%%  This file can be compiled as it stands or included in another   %%
+%%  LaTeX document. The table is based on the longtable package so  %%
+%%  the longtable options (headers, footers...) can be set in the   %%
+%%  preamble section below (see PRAMBLE).                           %%
+%%                                                                  %%
+%%  To include the file in another, the following two lines must be %%
+%%  in the including file:                                          %%
+%%        \def\inputGnumericTable{}                                 %%
+%%  at the beginning of the file and:                               %%
+%%        \input{name-of-this-file.tex}                             %%
+%%  where the table is to be placed. Note also that the including   %%
+%%  file must use the following packages for the table to be        %%
+%%  rendered correctly:                                             %%
+%%    \usepackage[latin1]{inputenc}                                 %%
+%%    \usepackage{color}                                            %%
+%%    \usepackage{array}                                            %%
+%%    \usepackage{longtable}                                        %%
+%%    \usepackage{calc}                                             %%
+%%    \usepackage{multirow}                                         %%
+%%    \usepackage{hhline}                                           %%
+%%    \usepackage{ifthen}                                           %%
+%%  optionally (for landscape tables embedded in another document): %%
+%%    \usepackage{lscape}                                           %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item Question-The open loop transfer function of a unity feedback system is given by
-\begin{align*}
- G(s)=\frac{\pi e^{-0.25s}}{s}
-\end{align*}
-\item Find  $\text{Re} \cbrak{G(\j \omega)}$ and  $\text{Im} \cbrak{G(\j \omega)}$
-\newline
-\solution 
-substitute \begin{align}
-S=j\omega
-\end{align}
-we get \begin{align}
-G(j\omega)&=-\frac{\pi}{\omega}(\sin{0.25\omega}+j\cos{0.25\omega})
-\end{align}
-\begin{align}
- \text{Re} \cbrak{G(\j \omega)}=-\frac{\pi}{\omega}(\sin{0.25\omega}) 
-\end{align}
-\begin{align}
- \text{Im} \cbrak{G(\j \omega)}=-\frac{\pi}{\omega}(j\cos{0.25\omega}) 
-\end{align}
-\item Sketch the Nyquist plot.
-\\
-\solution The Nyquist plot is a graph of $\text{Re} \cbrak{G(\j \omega)}$  vs $\text{Im} \cbrak{G(\j \omega)}$.
-The following python code generates the Nyquist plot in Fig.  \ref{fig:ee18btech11007}
-\begin{lstlisting}
-codes/ee18btech11007/nyquist.py
-\end{lstlisting}
-%
-\begin{figure}[!h]
-  \includegraphics[width=\columnwidth]{./figs/ee18btech11007.eps}
-  \caption{}
-  \label{fig:ee18btech11007}
-\end{figure}
-%
-\item Find the point at which the Nyquist plot of G(s) passes through negative real axis
-\newline
-\solution
-\begin{align}
-G(s)=\frac{\pi e^{-0.25s}}{s}
-\end{align}
 
- Nyquist plot cuts the negative real
-Axis at $\omega$ = phase cross over frequency,at phase cross over frequency the phase of nyquist plot becomes -$\pi$ radians.
-\
-\newline substitute \begin{align}
-s=j\omega.\end{align} 
-\begin{align}
-G(j\omega)&= -\frac{\pi}{\omega}(\sin{0.25\omega}+j\cos{0.25\omega})
-\end{align}
-\begin{align}
-\angle G(j\omega)=-\pi/2 -0.25\omega.
-\end{align}
-\begin{align}
-\angle G(j\omega)|_{\omega=\omega_{pc}}=-\pi
-\end{align}
-by solving for $\omega$ we get $\omega_{pc}=2\pi$.
-\
-\newline magnitude at any point is\begin{align}
-X=|G(j\omega)|=\frac{\pi}{\omega}.    
-\end{align} 
-\
-\newline substituting $\omega=2\pi$ in magnitude equation we get X=0.5.
-\\
-\newline so it intersects at (-0.5,0j)
-\\
-\newline we can verify with the following plot that it intersects at (-0.5,0j)
 
+%%  This section checks if we are begin input into another file or  %%
+%%  the file will be compiled alone. First use a macro taken from   %%
+%%  the TeXbook ex 7.7 (suggestion of Han-Wen Nienhuys).            %%
+\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+
+
+%%  Check for the \def token for inputed files. If it is not        %%
+%%  defined, the file will be processed as a standalone and the     %%
+%%  preamble will be used.                                          %%
+\ifundefined{inputGnumericTable}
+
+%%  We must be able to close or not the document at the end.        %%
+	\def\gnumericTableEnd{\end{document}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  This is the PREAMBLE. Change these values to get the right      %%
+%%  paper size and other niceties.                                  %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\documentclass[12pt%
+			  %,landscape%
+                    ]{report}
+       \usepackage[latin1]{inputenc}
+       \usepackage{fullpage}
+       \usepackage{color}
+       \usepackage{array}
+       \usepackage{longtable}
+       \usepackage{calc}
+       \usepackage{multirow}
+       \usepackage{hhline}
+       \usepackage{ifthen}
+
+	\begin{document}
+
+
+%%  End of the preamble for the standalone. The next section is for %%
+%%  documents which are included into other LaTeX2e files.          %%
+\else
+
+%%  We are not a stand alone document. For a regular table, we will %%
+%%  have no preamble and only define the closing to mean nothing.   %%
+    \def\gnumericTableEnd{}
+
+%%  If we want landscape mode in an embedded document, comment out  %%
+%%  the line above and uncomment the two below. The table will      %%
+%%  begin on a new page and run in landscape mode.                  %%
+%       \def\gnumericTableEnd{\end{landscape}}
+%       \begin{landscape}
+
+
+%%  End of the else clause for this file being \input.              %%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  The rest is the gnumeric table, except for the closing          %%
+%%  statement. Changes below will alter the table's appearance.     %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\gnumericmathit}[1]{#1} 
+%%  Uncomment the next line if you would like your numbers to be in %%
+%%  italics if they are italizised in the gnumeric table.           %%
+%\renewcommand{\gnumericmathit}[1]{\mathit{#1}}
+\providecommand{\gnumericPB}[1]%
+{\let\gnumericTemp=\\#1\let\\=\gnumericTemp\hspace{0pt}}
+ \ifundefined{gnumericTableWidthDefined}
+        \newlength{\gnumericTableWidth}
+        \newlength{\gnumericTableWidthComplete}
+        \newlength{\gnumericMultiRowLength}
+        \global\def\gnumericTableWidthDefined{}
+ \fi
+%% The following setting protects this code from babel shorthands.  %%
+ \ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{english}}
+%%  The default table format retains the relative column widths of  %%
+%%  gnumeric. They can easily be changed to c, r or l. In that case %%
+%%  you may want to comment out the next line and uncomment the one %%
+%%  thereafter                                                      %%
+\providecommand\gnumbox{\makebox[0pt]}
+%%\providecommand\gnumbox[1][]{\makebox}
+
+%% to adjust positions in multirow situations                       %%
+\setlength{\bigstrutjot}{\jot}
+\setlength{\extrarowheight}{\doublerulesep}
+
+%%  The \setlongtables command keeps column widths the same across  %%
+%%  pages. Simply comment out next line for varying column widths.  %%
+\setlongtables
+
+\setlength\gnumericTableWidth{%
+	55pt+%
+	35pt+%
+	119pt+%
+0pt}
+\def\gumericNumCols{3}
+\setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
+         \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
+\ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
+         {\def\gnumericScale{\ratio{\linewidth-%
+                        \tabcolsep*\gumericNumCols*2-%
+                        \arrayrulewidth*\gumericNumCols}%
+{\gnumericTableWidth}}}%
+{\def\gnumericScale{1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%% The following are the widths of the various columns. We are      %%
+%% defining them here because then they are easier to change.       %%
+%% Depending on the cell formats we may use them more than once.    %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{55pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{35pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{119pt*\gnumericScale}@{}}x\end{tabular}}
+
+\begin{tabular}[c]{%
+	b{\gnumericColA}%
+	b{\gnumericColB}%
+	b{\gnumericColC}%
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  The longtable options. (Caption, headers... see Goosens, p.124) %%
+%	\caption{The Table Caption.}             \\	%
+% \hline	% Across the top of the table.
+%%  The rest of these options are table rows which are placed on    %%
+%%  the first, last or every page. Use \multicolumn if you want.    %%
+
+%%  Header for the first page.                                      %%
+%	\multicolumn{3}{c}{The First Header} \\ \hline 
+%	\multicolumn{1}{c}{colTag}	%Column 1
+%	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
+%	\endfirsthead
+
+%%  The running header definition.                                  %%
+%	\hline
+%	\multicolumn{3}{l}{\ldots\small\slshape continued} \\ \hline
+%	\multicolumn{1}{c}{colTag}	%Column 1
+%	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
+%	\endhead
+
+%%  The running footer definition.                                  %%
+%	\hline
+%	\multicolumn{3}{r}{\small\slshape continued\ldots} \\
+%	\endfoot
+
+%%  The ending footer definition.                                   %%
+%	\multicolumn{3}{c}{That's all folks} \\ \hline 
+%	\endlastfoot
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hhline{|-|-|-}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\textbf{Variable}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\textbf{Value}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\raggedright}\textbf{Description}}
 \\
-\item Use Nyquist stability criterion to determine if the system is stable?
-\newline
-\solution
- \textbf{Nyquist Stability Criterion} - for  the stability of a closed loop transfer function G(s)/(1+G(s)*H(s)) ,the number of poles of G(s)*H(s) on right half of s-plane must equal the number of encirclement of nyquist contour of  G(s)*H(s) about the critical point -1+0j
+\hhline{|---|}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}Z}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}0}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\raggedright}Poles of $\frac{G(s)}{1+G(s)H(s)}$in right half of s plane}
 \\
-\newline we must find
-\begin{align}
-Z=P+N    
-\end{align}
-\
-\begin{tabular}{ |p{4cm}||p{4cm}|  }
- \hline
- 
- \hline
- Variable&Description\\
- \hline
- Z&no of poles of G(s)/(1+G(s)*H(s)) in the right half of s-plane\\
- \hline
- P&no of poles of G(s)*H(s) in right half of s-plane \\
- \hline
- N&no of encirclement of G(s)*H(s) about -1+j0 in clockwise direction\\
- 
- \hline
+\hhline{|---|}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}N}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}0}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\raggedright}Poles of $G(s)H(s)$ in right half of s plane}
+\\
+\hhline{|---|}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}P}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}0}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\raggedright}No of encirclements of $G(s)H(s)$  about -1+j0 in the Nyquist plot}
+\\
+\hhline{|-|-|-|}
 \end{tabular}
-\\
-\newline NOTE-
-\begin{itemize}
-\item If a clockwise contour does not encircle zeros nor poles, then the plot will not encircle the origin.
-\item If a clockwise contour encircles a zero, then the plot will encircle the origin clockwise once.
-\item If a clockwise contour encircles a pole, then the plot will encircle the origin counterclockwise once.
-\end{itemize}
-\\
-\newline from plot we get N=0 because there are no encirclements about -1+0j,and we already know P=0 since our G(s) doesnt have any poles on right half of s-plane
-\begin{align}
-Z=0+0=0
-\end{align}
-$\therefore$ the system is stable.
 
-
-
-\end{enumerate}
+\ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{\languagename}}
+\gnumericTableEnd
