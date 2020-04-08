@@ -67,13 +67,7 @@ Also, from \eqref{eq:ee18btech11007_system},
 \label{table:ee18btech11007}
 \end{table}
 %
-\newline NOTE-
-\begin{itemize}
-\item If a clockwise contour does not encircle zeros or poles, then the plot will not encircle the origin.
-\item If a clockwise contour encircles a zero, then the plot will encircle the origin clockwise once.
-\item If a clockwise contour encircles a pole, then the plot will encircle the origin counterclockwise once.
-\item clockwise encirclement of nyquist plot is taken as positive and  counterclockwise encirclement of nyquist plot is taken as negative
-\end{itemize}
+
 \item Find the value of $N$ defined in Table \ref{table:ee18btech11007} from Fig.  \ref{fig:ee18btech11007}.
 %
 \\
@@ -83,7 +77,7 @@ Also, from \eqref{eq:ee18btech11007_system},
 \solution $\because H(s) = 1$, $G(s)H(s) = G(s)$. Also, $G(s)$ has a pole at $s = 0$, hence $P = 0$.
 \item Use the Nyquist Stability criterion to determine if the system in \ref{eq:ee18btech11007_system} is stable.
 \\
-\solution According to the Nyquist criterion, the system is stable if
+\solution \textbf{Nyquist criterion}-the no of encirclements of nyquist plot around origin equals difference of no of zeros and no of poles in the right half of splane, the system is stable if
 \begin{align}
 \label{eq:ee18btech11007_system_nyquist}
 Z = P+N = 0,    
