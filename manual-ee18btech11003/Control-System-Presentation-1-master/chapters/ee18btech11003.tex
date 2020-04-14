@@ -195,14 +195,51 @@ and I is the identity matrix.
 \begin{align}
     U =(\vec{I}-\vec{T})^-1
 \end{align}
-finding
+our transfer function is $U_0_4$
 \begin{align}
-    U_{04}=\frac{s^2+1}{s^3+2s^2+s+1}
+U_0_4=C_4_0/|\vec{I}-\vec{T}|
+\label{eq:transfer_function}
 \end{align}
-gives us the transfer function 
+\begin{align}
+    C_4_0 &=\mydet{
+-1&0&0&0 
+\\1 &-s-1/s&0&0 
+\\0&1&-1&0
+\\0&0&1&-1/s}
+\end{align}
+\begin{align}
+    C_4_0 &=-1\mydet{
+-s-1/s&0&0\\1&-1&0 
+\\0&1&-1/s}
+\end{align}
+\begin{align}
+    C_4_0 &=(s+1/s)(1/s)=\frac{s^2+1}{s^2}
+    \label{eq:C40}
+\end{align}
+\begin{align}
+|\vec{I}-\vec{T}|=1\mydet{1&-s-1/s&0&0 \\0&1&-1&0 \\0&0&1&-1/s\\0&0&0&1}  \\ +1\mydet{0&-s-1/s&0&0 \\0&1&-1&0 \\1&0&1&-1/s\\1&0&0&1}
+\end{align}
+\begin{align}
+|\vec{I}-\vec{T}|= 1\mydet{1&-1&0\\0&1&-1/s\\0&0&1}+(s+1/s)\mydet{0&-1&0\\0&1&-1/s\\0&0&1}\ \\+(s+1/s)\mydet{0&-1&0\\1&1&-1/s\\1&0&1}   
+\end{align}
+\begin{align}
+|\vec{I}-\vec{T}|=1+0+(s+1/s)(1+1/s)
+\end{align}
+\begin{align}
+|\vec{I}-\vec{T}|=s+2+ 1/s +1/s^2
+\end{align}
+\begin{align}
+ |\vec{I}-\vec{T}|=\frac{s^3+2s^2+s+1}{s^2}
+ \label{eq:det}
+\end{align}
+from \eqref{eq:transfer_function},\eqref{eq:C40},\eqref{eq:det} we get
+\begin{align}
+    T(s)=\frac{s^2+1}{s^3+2s^2+s+1}
+\end{align}
+\\
 \item Write a program to compute Mason's gain formula, given the branch nodes and gains for each path.
 \\
-\solution The following code computes Masons Gain 
+\solution below code finds Masons Gain 
 \begin{lstlisting}
 codes/MasonsGain.py
 \end{lstlisting}
