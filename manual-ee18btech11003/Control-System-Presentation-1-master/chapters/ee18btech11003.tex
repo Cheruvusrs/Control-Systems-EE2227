@@ -1,0 +1,209 @@
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+
+\item The Block diagram of a system is illustrated in the figure shown, where $X(s)$ is the input and $Y(s)$ is the output.  Draw the equivalent signal flow graph. 
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+%
+\begin{figure}[!ht]
+    \begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/block_diagram.tex}}
+	\end{center}
+\caption{Block Diagram}
+\label{fig:ee18btech11003_block_diagram}
+\end{figure}
+\\
+\solution The signal flow graph of the block diagram in Fig. \ref{fig:ee18btech11003_block_diagram} is available in Fig. \ref{fig:ee18btech11003_signal_flow}
+%
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/signal_flow.tex}}
+	\end{center}
+\caption{Signal Flow Graph}
+\label{fig:ee18btech11003_signal_flow}
+\end{figure}
+%
+\renewcommand{\thefigure}{\theenumi}
+\item Draw all the forward paths in Fig. \ref{fig:ee18btech11003_signal_flow}
+and compute the respective gains.
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\\
+\solution The forward paths are available in Figs. \ref{fig:ee18btech11003_P1}
+ and \ref{fig:ee18btech11003_P2}.  The respective gains are
+\begin{align}
+P_1&=s \brak{\frac{1}{s}}=1
+\\
+P_2&=(1/s)(1/s)=1/s^2
+\end{align}
+%
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/P1.tex}}
+	\end{center}
+\caption{$P_1$}
+\label{fig:ee18btech11003_P1}
+\end{figure}
+%
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/P2.tex}}
+	\end{center}
+\caption{$P_2$}
+\label{fig:ee18btech11003_P2}
+\end{figure}
+\renewcommand{\thefigure}{\theenumi}
+%
+\item Draw all the loops in Fig. \ref{fig:ee18btech11003_signal_flow} and calculate the respective gains.
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+\\
+\solution The loops are available in Figs. \ref{fig:ee18btech11003_L1}-\ref{fig:ee18btech11003_L4}
+and the corresponding gains are
+%
+\begin{align}
+L_1&=(-1)(s)=-s
+\\
+L_2&=s\brak{\frac{1}{s}}\brak{-1}=-1
+\\
+L_3&=\brak{\frac{1}{s}}(-1)=-\frac{1}{s}
+\\
+L_4&=\brak{\frac{1}{s}}\brak{\frac{1}{s}}(-1)=-\frac{1}{s^2}
+\end{align}
+
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/L1.tex}}
+	\end{center}
+\caption{$L_1$}
+\label{fig:ee18btech11003_L1}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/L2.tex}}
+	\end{center}
+\caption{$L_2$}
+\label{fig:ee18btech11003_L2}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/L3.tex}}
+	\end{center}
+\caption{$L_3$}
+\label{fig:ee18btech11003_L3}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11003/L4.tex}}
+	\end{center}
+\caption{$L_4$}
+\label{fig:ee18btech11003_L4}
+\end{figure}
+
+\renewcommand{\thefigure}{\theenumi}
+
+\item State Mason's Gain formula and explain the parameters through a table.
+\\
+\solution 
+According to Mason's Gain Formula,
+\begin{align}
+T &= \frac{Y(s)}{X(s)} 
+\\
+ &= \frac{\sum_{i=1}^{N} P_i\Delta_i}{\Delta}
+\label{eq:ee18btech11003_mason}
+\end{align}
+%
+where the parameters are described in Table \ref{table:ee18btech11003}
+\begin{table}[!ht]
+\centering
+\input{./tables/ee18btech11003.tex}
+\caption{}
+\label{table:ee18btech11003}
+\end{table}
+\item List the parameters in Table \ref{table:ee18btech11003}
+for Fig. \ref{fig:ee18btech11003_signal_flow}.
+\\
+\solution The parameters are available in Table \ref{table:ee18btech11003_ex}
+
+\begin{table}[!ht]
+\centering
+\input{./tables/ee18btech11003_ex.tex}
+\caption{}
+\label{table:ee18btech11003_ex}
+\end{table}
+
+\item  Find the transfer function using Mason's Gain Formula.
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
+%
+\\
+\solution From \eqref{eq:ee18btech11003_mason} and \ref{table:ee18btech11003_ex},
+\begin{align}
+T(s)&=\frac{P_1 \Delta_1+P_2 \Delta_2}{\Delta}
+\\
+&=\frac{1 +\frac{1}{s^2}}{1-(-s-1-\frac{1}{s}-\frac{1}{s^2})}
+\\
+&=\frac{s^2+1}{s^3+2s^2+s+1}
+\end{align}
+%
+after simplification.
+\renewcommand{\thefigure}{\theenumi}
+\item State the Equivalent Matrix Form of  Masons Gain formula 
+\\
+\solution Mason's rule can be stated in a simple matrix form. Assume T is  the transient matrix of the graph where \[t_{nm}\ =[T_{nm}]\] is sum transmittance of branches from node m toward node n. Then, the gain from node m to node n of the graph is equal to \[u_{nm}\ =[U_{nm}]\] where,
+\begin{align}
+    U=(I-T)^-1
+\end{align}
+and I is the identity matrix.
+\item Find the Transfer Function using the matrix equivalent form of Masons Gain Formula
+\\
+\solution The transient matrix for \ref{fig:ee18btech11003_signal_flow}  is 
+\begin{align}
+\vec{T} = \myvec{0 & 1 & 0 & 0 & 0 \ \\
+0 & 0 & s+1/s & 0 & 0   \\
+ 0 & 0 & 0 & 1 & 0 \\
+ -1 & 0 & 0 & 0 &1/s \\
+-1 & 0 & 0 & 0 & 0 }
+\end{align}
+\begin{align}
+\vec{I} = \myvec{1 & 0 & 0 & 0 & 0 \ \\
+0 & 1 & 0 & 0 & 0   \\
+ 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 }
+\end{align}
+\begin{align}
+\vec{I}-\vec{T} = \myvec{1 & -1 & 0 & 0 & 0 \ \\
+0 & 1 & -s-1/s & 0 & 0   \\
+ 0 & 0 & 1 & -1 & 0 \\
+ 1 & 0 & 0 & 1 &-1/s \\
+1 & 0 & 0 & 0 & 1 }
+\end{align}
+\begin{align}
+    U =(\vec{I}-\vec{T})^-1
+\end{align}
+finding
+\begin{align}
+    U_{01}=\frac{s^2+1}{s^3+2s^2+s+1}
+\end{align}
+gives us the transfer function 
+\item Write a program to compute Mason's gain formula, given the branch nodes and gains for each path.
+\\
+\solution The following code computes Masons Gain 
+\begin{lstlisting}
+codes/MasonsGain.py
+\end{lstlisting}
+\end{enumerate}
