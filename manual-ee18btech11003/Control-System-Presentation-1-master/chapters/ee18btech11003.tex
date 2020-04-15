@@ -170,13 +170,30 @@ after simplification.
 and I is the identity matrix.
 \item Find the Transfer Function using the matrix equivalent form of Masons Gain Formula
 \\
-\solution The transient matrix for \ref{fig:ee18btech11003_signal_flow}  is 
+\solution 
+The the state equations of \ref{fig:ee18btech11003_signal_flow} are-
 \begin{align}
-\vec{T} = \myvec{0 & 1 & 0 & 0 & 0 \ \\
-0 & 0 & s+1/s & 0 & 0   \\
- 0 & 0 & 0 & 1 & 0 \\
- -1 & 0 & 0 & 0 &1/s \\
--1 & 0 & 0 & 0 & 0 }
+N_1=X(s)-N_4-N_5
+\end{align}
+\begin{align}
+N_2=N_1
+\end{align}
+\begin{align}
+N_3=N_2(s+1/s)
+\end{align}
+\begin{align}
+N_4=N_3
+\end{align}
+\begin{align}
+N_5=N_4/s
+\end{align}
+The transient matrix for \ref{fig:ee18btech11003_signal_flow}  is obtained as
+\begin{align}
+\vec{T} = \myvec{0 & 0 & 0 & -1 & -1 \ \\
+1 & 0 & 0 & 0 & 0   \\
+ 0 & s+1/s & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1/s & 0 }
 \end{align}
 \begin{align}
 \vec{I} = \myvec{1 & 0 & 0 & 0 & 0 \ \\
@@ -186,51 +203,54 @@ and I is the identity matrix.
 0 & 0 & 0 & 0 & 1 }
 \end{align}
 \begin{align}
-\vec{I}-\vec{T} = \myvec{1 & -1 & 0 & 0 & 0 \ \\
-0 & 1 & -s-1/s & 0 & 0   \\
- 0 & 0 & 1 & -1 & 0 \\
- 1 & 0 & 0 & 1 &-1/s \\
-1 & 0 & 0 & 0 & 1 }
+\vec{I}-\vec{T} = \myvec{1 & 0 & 0 & 1 & 1 \ \\
+-1 & 1 & 0 & 0 & 0   \\
+ 0 & -s-1/s & 1 & 0 & 0 \\
+ 0 & 0 & -1 & 1 & 0 \\
+0 & 0 & 0 & -1/s & 1 }
 \end{align}
 \begin{align}
     U =(\vec{I}-\vec{T})^-1
 \end{align}
-our transfer function is $U_0_4$
+our transfer function is $U_4_0$
 \begin{align}
-U_0_4=C_4_0/|\vec{I}-\vec{T}|
+U_4_0=C_0_4/|\vec{I}-\vec{T}|
 \label{eq:transfer_function}
 \end{align}
 \begin{align}
-    C_4_0 &=\mydet{
--1&0&0&0 
-\\1 &-s-1/s&0&0 
-\\0&1&-1&0
-\\0&0&1&-1/s}
+    C_0_4 &=\mydet{
+-1&1&0&0 
+\\0 &-s-1/s&1&0 
+\\0&0&-1&1
+\\0&0&0&-1/s}
 \end{align}
 \begin{align}
-    C_4_0 &=-1\mydet{
+    C_0_4 &=-1\mydet{
 -s-1/s&0&0\\1&-1&0 
 \\0&1&-1/s}
 \end{align}
 \begin{align}
-    C_4_0 &=(s+1/s)(1/s)=\frac{s^2+1}{s^2}
+    C_0_4 &=(s+1/s)(1/s)=\frac{s^2+1}{s^2}
     \label{eq:C40}
 \end{align}
 \begin{align}
-|\vec{I}-\vec{T}|=1\mydet{1&-s-1/s&0&0 \\0&1&-1&0 \\0&0&1&-1/s\\0&0&0&1}  \\ +1\mydet{0&-s-1/s&0&0 \\0&1&-1&0 \\1&0&1&-1/s\\1&0&0&1}
+|\vec{I}-\vec{T}|^T=1\mydet{1&-s-1/s&0&0 \\0&1&-1&0 \\0&0&1&-1/s\\0&0&0&1}  \\ +1\mydet{0&-s-1/s&0&0 \\0&1&-1&0 \\1&0&1&-1/s\\1&0&0&1}
 \end{align}
 \begin{align}
-|\vec{I}-\vec{T}|= 1\mydet{1&-1&0\\0&1&-1/s\\0&0&1}+(s+1/s)\mydet{0&-1&0\\0&1&-1/s\\0&0&1}\ \\+(s+1/s)\mydet{0&-1&0\\1&1&-1/s\\1&0&1}   
+|\vec{I}-\vec{T}|^T= 1\mydet{1&-1&0\\0&1&-1/s\\0&0&1}+(s+1/s)\mydet{0&-1&0\\0&1&-1/s\\0&0&1}\ \\+(s+1/s)\mydet{0&-1&0\\1&1&-1/s\\1&0&1}   
 \end{align}
 \begin{align}
-|\vec{I}-\vec{T}|=1+0+(s+1/s)(1+1/s)
+|\vec{I}-\vec{T}|^T=1+0+(s+1/s)(1+1/s)
 \end{align}
 \begin{align}
-|\vec{I}-\vec{T}|=s+2+ 1/s +1/s^2
+|\vec{I}-\vec{T}|^T=s+2+ 1/s +1/s^2
 \end{align}
 \begin{align}
- |\vec{I}-\vec{T}|=\frac{s^3+2s^2+s+1}{s^2}
+ |\vec{I}-\vec{T}|^T=\frac{s^3+2s^2+s+1}{s^2}
  \label{eq:det}
+\end{align}
+\begin{align}
+ |\vec{I}-\vec{T}|^T= |\vec{I}-\vec{T}|
 \end{align}
 from \eqref{eq:transfer_function},\eqref{eq:C40},\eqref{eq:det} we get
 \begin{align}
