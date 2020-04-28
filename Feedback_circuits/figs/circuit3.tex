@@ -1,0 +1,24 @@
+\begin{circuitikz}
+\ctikzset{bipoles/length=1cm}
+\draw
+(0,0) node[npn](npn1){Q1} 
+ (npn1.E) -- ++(0,-0.5) coordinate(a)to [R, l_=$R_E_1$] ++(0,-1) to node[ground]{} ++(0,-0.2)
+ (a)-- ++(0,0.3)to [R, l_=$R_F$] ++(1,0)coordinate(b)
+ (b)-- ++(1,0) to [R, l_=$R_E_2$] ++(0,-1) to node[ground]{} ++(0,-0.2)
+ (npn1.C)-- ++(0,0.5) to [R, l_=$R_C_1$]++(0,1)coordinate(c)
+ (c) -- ++(-0.5,0) to node[ground]{}++(0,-0.5)
+ (npn1.C)-- ++(0.5,0) 
+ (npn1.C)-- ++(1,0) node[npn](npn2){Q2}
+ (npn2.E) to node[ground]{}++(0,-0.003)
+ (npn2.C)-- ++(0,0.5) to [R, l_=$R_C_2$]++(0,1)coordinate(c2)
+ (c2)-- ++(-0.5,0) to node[ground]{}++(0,-0.5)
+ (npn2.C) -- ++(1,0) node[npn](npn3){Q3}
+ (npn3.C)-- ++(0,0.5) to [R, l_=$R_C_3$]++(0,1)coordinate(c3)
+ (c3)-- ++(-0.5,0) to node[ground]{}++(0,-0.5)
+ (npn3.E)-- ++(0.5,0) -- ++(0,-0.5) coordinate(a2)to [R, l_=$R_E_2$] ++(0,-1) to node[ground]{} ++(0,-0.2)
+ (a2)-- ++(0,0.3)to [R, l_=$R_F$] ++(1,0)coordinate(b2)
+ (b2)-- ++(1,0) to [R, l_=$R_E_1$] ++(0,-1) to node[ground]{} ++(0,-0.2)
+ (npn1.B)-- ++(-0.5,0) to [american voltage source, v=$V_{i}$]++ (0,-1.5) to node[ground]++ (0,-0.1)
+ 
+
+;\end{circuitikz}
