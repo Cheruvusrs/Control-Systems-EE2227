@@ -9,11 +9,17 @@
 \caption{circuit1}
 \label{fig:circuit1}
 \end{figure}
+\begin{table}[!ht]
+\centering
+\input{./tables/EE18BTECH11007.tex}
+\caption{parameters}
+\label{table:ee18btech11007}
+\end{table}
 
 \item
 
- Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} Assume the loop gain is large, find an approximate expression and value for the closed loop gain $A_f=\frac{I_0}{V_s}$ and  for $\frac{I_c}{V_s}$ ,take {\small $R_E_1=100\Omega$,$R_C_1=9K\Omega$,$R_C_2=5K\Omega$,$R_F=640\Omega$,$R_E_2=100\Omega$,$R_C_3=600\Omega$,$h_f_e=100$,$r_0=\infty$,$I_C_1=0.6mA$,$I_C_2=1mA$,$I_C_3=4mA$
-}% 
+ Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} Assume the loop gain is large, find an approximate expression and value for the closed loop gain $A_f=\frac{I_0}{V_s}$ and  for $\frac{I_c}{V_s}$ ,use values from Table \ref{table:ee18btech11007}
+
  
 \begin{figure}[!ht]
 	\begin{center}
@@ -78,19 +84,15 @@ to find $G=\frac{I_0}{V_i}$ we determine the gain of first stage,this is written
 \begin{align}
     \frac{V_c_1}{V_i}=\frac{-\alpha(R_c_1||r_\pi_2)}{r_e_1+(R_E_1||(R_F+R_E_2))}
 \end{align}
-Since $Q_1$ is biased at 0.6mA,$r_e_1=41.7\Omega$,Transistor $Q_2$ is biased at 1mA,thus
+using values from \ref{table:ee18btech11007}
 \begin{align}
-r_\pi_2=\frac{h_f_e}{g_m_2}=\frac{100}{40}=2.5K\Omega.
-\end{align}
- Substituting these values together with $\alpha_1$=0.99,$R_C_1=9K\Omega$,$R_E_1=100\Omega$,$R_F=640\Omega$,and $R_E_2=100\Omega$, results in 
-\begin{align}
-   \frac{V_c_1}{V_i}=-14.92V/V 
+\frac{V_c_1}{V_i}=-14.92V/V     
 \end{align}
 Next, we determine the gain of the second stage,which can be written by inspection(noting that $V_b_2=V_c_1$)as
 {\small \begin{align}
     \frac{V_c2}{V_c_1}=-g_m_2{R_c_2||(h_f_e+1)[r_e_3+(R_E_2||(R_F+R_E_1))]}
 \end{align}}%
-substituting the values ,results in 
+substituting ,results in 
 \begin{align}
     \frac{V_c_2}{V_c_1}=-131.2 V/V
 \end{align}
@@ -98,8 +100,9 @@ Finally,for the third stage we can write by inspection
 {\small \begin{align}
     \frac{I_0}{V_c_2}=\frac{I_e_3}{V_b_3}=\frac{1}{r_e_3+(R_E_2||(R_F+R_E_1))}
 \end{align}}%
+substituing values from \ref{table:ee18btech11007} gives
 \begin{align}
-    \frac{1}{6.25+(100||740)}=10.6mA/V
+    \frac{I_0}{V_c_2}=10.6mA/V
 \end{align}
 combining the gains of the three stags results in
 {\small 
@@ -122,7 +125,7 @@ the voltage gain is found from
 \end{align}
 which is also very close to the approximate value found in   \eqref{eq:eq1} above given by
 \begin{align}
-    R_in =R_if=R_i(1+GH)
+    R_i_n =R_if=R_i(1+GH)
 \end{align}
 where $R_i$ is the input resistance of the G circuit.The value of $R_i$ can be found from the circuit in fig.\ref{fig:circuit3} as follows:
 {\small \begin{align}
@@ -138,7 +141,7 @@ where $R_o$ can be determined to be
 {\small \begin{align}
     R_o=(R_E_2||(R_F+R_E_1))+r_e_3+\frac{R_C_2}{h_f_e+1}
 \end{align}}%
-which, for the values given, yields $R_o = 143.9 \Omega$. The output resistance $R_o_f$ of the feedback amplifier can now be found as
+from values in Table \ref{table:ee18btech11007}, yields $R_o = 143.9 \Omega$. The output resistance $R_o_f$ of the feedback amplifier can now be found as
 {\small \begin{align}
     R_o_f=R_o(1+GH)=143.9(1+20.7\times11.9)=35.6K\Omega
 \end{align}}%
@@ -161,6 +164,7 @@ thus $R_o_u_t$ is increased (from $r_o_3$) but not by (1+GH)
 \caption{block diagram}
 \label{fig:block_diagram}
 \end{figure}
+
 
 
 \end{enumerate}
