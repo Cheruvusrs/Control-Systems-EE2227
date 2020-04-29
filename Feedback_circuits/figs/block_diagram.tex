@@ -1,0 +1,19 @@
+\tikzstyle{block} = [draw, rectangle, 
+    minimum height=3em, minimum width=6em]
+\tikzstyle{sum} = [draw, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    \node [input, name=input] {$V_s$};
+    \node [sum, right of=input] (sum) {};
+    \node [block, right of=sum] (controller) {$G$};
+    \node [output, right of=controller] (output) {};
+    \node [block, below of=controller] (feedback) {$H$};
+    \draw [draw,->] (input) -- node {$V_s$} (sum);
+    \draw [->] (sum) -- node {$V_i$} (controller);
+    \draw [->] (controller) -- node [name=y] {$I_o$}(output);
+    \draw [->] (y) |- (feedback);
+    \draw [->] (feedback) -| node[pos=0.99]{$-$}  node [near end] {$V_f$} (sum);
+\end{tikzpicture}
