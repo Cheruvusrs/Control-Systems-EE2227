@@ -1,4 +1,15 @@
+# License
+'''
+Code by C.Sri Ram Saran
+MAY 1st,2020
+Released under GNU GPL
+'''
+
 import numpy as np
+#if using termux
+import subprocess
+import shlex
+#end if
 R_C_1=9000.0
 R_E_1=100.0
 R_C_2=5000.0
