@@ -4,14 +4,14 @@
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/circuit1.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit1.tex}}
 	\end{center}
 \caption{circuit1}
 \label{fig:circuit1}
 \end{figure}
 \begin{table}[!ht]
 \centering
-\input{./tables/table1.tex}
+\input{./tables/EE18BTECH11007/table1.tex}
 \caption{parameters}
 \label{table:ee18btech11007}
 \end{table}
@@ -19,7 +19,7 @@
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/circuit2.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit2.tex}}
 	\end{center}
 \caption{circuit2}
 \label{fig:circuit2}
@@ -64,7 +64,7 @@ thus,
  \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/circuit3.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit3.tex}}
 	\end{center}
 \caption{circuit3}
 \label{fig:circuit3}
@@ -72,7 +72,7 @@ thus,
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/circuit4.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit4.tex}}
 	\end{center}
 \caption{circuit4}
 \label{fig:circuit4}
@@ -153,20 +153,32 @@ thus $R_o_u_t$ is increased (from $r_o_3$) but not by (1+GH)
 \item put the obtained parameters in a table
 \\
 \solution 
-\\
-\input{./tables/table2.tex}
-\\
+\begin{table}[!ht]
+\centering
+\input{./tables/EE18BTECH11007/table2.tex}
+\caption{parameters}
+\label{table:parameters}
+\end{table}
 \item Represent this amplifier in  a control system Block Diagram
 \\
 \solution figure in  fig.\ref{fig:block_diagram} represents our control system
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/block_diagram.tex}}
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/block_diagram.tex}}
 	\end{center}
 \caption{block diagram}
 \label{fig:block_diagram}
 \end{figure}
+\item write a code for doing calculations and verify the values obtained in \ref{table:parameters} 
+\\
+\solution 
+following code does all the calculations of above equations to give parameters in
+\ref{table:parameters} 
+\begin{lstlisting}
+codes/ee18btech11007/circuit_calc.py
+\end{lstlisting}
+%
 
 
 
