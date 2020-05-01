@@ -49,7 +49,7 @@ R_OF=R_O*(1+G*H)# OUTPUT RESISTANCE OF FEEDBACK AMPLIFIER
 R_OUT=(r_o_3+r_parallel(R_OF,r_pi_3+R_C_2)*(1+g_m_3*r_o_3*(r_pi_3/(r_pi_3+R_C_2))))/(1000000)# OUTPUT RESISTANCE OF CIRCUIT
 print("forward path GAIN  (G):"+str(G)+"A/V")
 print("feedback path GAIN  (H):"+str(H)+"ohm")
-print("closed loop GAIN  (T):"+str(A_F)+"A/V")
+print("closed loop GAIN  (T):"+str(T)+"A/V")
 print("VOLTAGE GAIN  (V_O/V_S):"+str(VOLTAGE_GAIN)+"V/V")
 print("input resistance  (R_IN):"+str(R_IN)+"ohm")
 print("output resistance  (R_OUT):"+str(R_OUT)+"ohm")
