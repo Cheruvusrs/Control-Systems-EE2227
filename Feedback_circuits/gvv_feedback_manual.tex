@@ -1,9 +1,9 @@
-
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%\usepackage{setspace}
+%
+\usepackage{setspace}
 \usepackage{gensymb}
 %\doublespacing
-%\singlespacing
+\singlespacing
 
 %\usepackage{graphicx}
 %\usepackage{amssymb}
@@ -31,19 +31,19 @@
 %\usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{mathtools}
+\usepackage{steinmetz}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usepackage{circuitikz}
 \usepackage{verbatim}
-\usepackage[american]{circuitikz}
-\usepackage{amsmath}
-\usepackage{bm}
-\usetikzlibrary{arrows.meta,decorations.markings}
-%\usepackage{tfrupee}
-%\usepackage[breaklinks=true]{hyperref}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
 %\usepackage{stmaryrd}
-%\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
-%\usepackage{listings}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usetkzobj{all}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes.geometric}
+\newif\iflabrev
+\usepackage{listings}
     \usepackage{color}                                            %%
     \usepackage{array}                                            %%
     \usepackage{longtable}                                        %%
@@ -73,12 +73,12 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
-%\lstset{
+\lstset{
 %language=C,
-%frame=single, 
-%breaklines=true,
-%columns=fullflexible
-%}
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
 %\lstset{
 %language=tex,
 %frame=single, 
@@ -156,9 +156,9 @@
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{
-	\logo{
+%	\logo{
 Control Systems
-	}
+%	}
 }
 \author{ G V V Sharma$^{*}$% <-this % stops a space
 	\thanks{*The author is with the Department
@@ -218,7 +218,7 @@ Control Systems
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
 % column for its text to clear the IEEEpubid mark.
 % make the title area
-%\maketitle
+\maketitle
 \newpage
 \tableofcontents
 \bigskip
@@ -253,12 +253,22 @@ Control Systems
 This manual is an introduction to control systems based on GATE problems.Links to sample Python codes are available in the text.  
 \end{abstract}
 Download python codes using 
-%\begin{lstlisting}
-%svn co https://github.com/gadepall/school/trunk/control/code
-\section{Stability}
+\begin{lstlisting}
+svn co https://github.com/gadepall/school/trunk/control/codes
+\end{lstlisting}
+\section{Signal Flow Graph}
+\section{Bode Plot}
+\section{Second order System}
 \section{Routh Hurwitz Criterion}
-\section{Compensators}
+\section{State-Space Model}
 \section{Nyquist Plot}
-\section{Feedback systems}
-\input{./chapters/EE18BTECH11007.tex}
+\section{Compensators}
+\section{Gain Margin}
+\section{Phase Margin}
+\section{Oscillator}
+\section{Root Locus}
+\section{Polar Plot}
+\section{PID Controller}
+\section{Feedback Circuits}
+\input{chapters/EE18BTECH11007.tex}
 \end{document}
