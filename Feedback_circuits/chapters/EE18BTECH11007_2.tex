@@ -5,7 +5,7 @@
  \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit1.tex}}
+		\resizebox{\columnwidth}{!}{\input{circuit1}}
 	\end{center}
 \caption{circuit1}
 \label{fig:circuit1}
@@ -13,14 +13,14 @@
  \ref{table:ee18btech11007}
 \begin{table}[!ht]
 \centering
-\input{./tables/EE18BTECH11007/table1.tex}
+\input{./tables/table1.tex}
 \caption{parameters}
 \label{table:ee18btech11007}
 \end{table}
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit2.tex}}
+		\resizebox{\columnwidth}{!}{\input{circuit2}}
 	\end{center}
 \caption{circuit2}
 \label{fig:circuit2}
@@ -30,10 +30,9 @@
 \begin{align}
     T =\frac{I_0}{V_s}\approx \frac{1}{H}
 \end{align}
-feedback factor H can be found from feedback network.The feedback network consists of resistors $R_E_1,R_F,R_E_2$
-using circuit2 in  fig.\ref{fig:circuit2} we get
+feedback factor H can be found from feedback network,The feedback network consists of resistors $R_{E1},R_F,R_{E2}$ using circuit2 in  fig.\ref{fig:circuit2} we get
 \begin{align}
-    H=\frac{V_f}{I_0}=\frac{R_E_2}{R_E_2+R_F+R_E_1} \times R_E_1
+    H=\frac{V_f}{I_0}=\frac{R_{E2}}{R_{E2}+R_F+R_{E1}} \times R_{E1}
 \end{align}
 \begin{align}
     =\frac{100}{100+640+100}\times 100=11.9\Omega
@@ -43,7 +42,7 @@ thus,
     T\approx \frac{1}{H}
 \end{align}
 \begin{align}
-    =\frac{1}{R_E_2}(1+\frac{R_E_2+R_F}{R_E_1})
+    =\frac{1}{R_{E2}}(1+\frac{R_{E2}+R_F}{R_{E1}})
 \end{align}
 \begin{align}
     =\frac{1}{11.9}=84mA/V
@@ -56,7 +55,7 @@ thus,
 \\
 \solution 
 \begin{align}
-\frac{V_0}{V_s}=\frac{-I_c R_C_3}{V_s}=-84\times0.6=-50.4V/V
+\frac{V_0}{V_s}=\frac{-I_c R_{C3}}{V_s}=-84\times0.6=-50.4V/V
 \end{align}
 \item use feedback analysis to find open loop gain G 
 \\
@@ -64,7 +63,7 @@ thus,
  \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit3.tex}}
+		\resizebox{\columnwidth}{!}{\input{circuit3}}
 	\end{center}
 \caption{circuit3}
 \label{fig:circuit3}
@@ -72,34 +71,34 @@ thus,
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit4.tex}}
+		\resizebox{\columnwidth}{!}{\input{circuit4}}
 	\end{center}
 \caption{circuit4}
 \label{fig:circuit4}
 \end{figure}
 to find $G=\frac{I_0}{V_i}$ we determine the gain of first stage,this is written by inspection as-
 \begin{align}
-    \frac{V_c_1}{V_i}=\frac{-\alpha(R_c_1||r_\pi_2)}{r_e_1+(R_E_1||(R_F+R_E_2))}
+    \frac{V_{c1}}{V_i}=\frac{-\alpha(R_{c1}||r_{\pi2})}{r_{e1}+(R_{E1}||(R_F+R_{E2}))}
 \end{align}
 using values from \ref{table:ee18btech11007}
 \begin{align}
-\frac{V_c_1}{V_i}=-14.92V/V     
+\frac{V_{c1}}{V_i}=-14.92V/V     
 \end{align}
-Next, we determine the gain of the second stage,which can be written by inspection(noting that $V_b_2=V_c_1$)as
+Next, we determine the gain of the second stage,which can be written by inspection(noting that $V_{b2}=V_{c1}$)as
 \begin{align}
-    \frac{V_c2}{V_c_1}=-g_m_2{R_c_2||(h_f_e+1)[r_e_3+(R_E_2||(R_F+R_E_1))]}
+    \frac{V_{c2}}{V_{c1}}=-g_{m2}{R_{c2}||(h_{fe}+1)[r_{e3}+(R_{E2}||(R_F+R_{E1}))]}
 \end{align}
 substituting ,results in 
 \begin{align}
-    \frac{V_c_2}{V_c_1}=-131.2 V/V
+    \frac{V_{c2}}{V_{c1}}=-131.2 V/V
 \end{align}
 Finally,for the third stage we can write by inspection
 \begin{align}
-    \frac{I_0}{V_c_2}=\frac{I_e_3}{V_b_3}=\frac{1}{r_e_3+(R_E_2||(R_F+R_E_1))}
+    \frac{I_0}{V_{c2}}=\frac{I_{e3}}{V_{b3}}=\frac{1}{r_{e3}+(R_{E2}||(R_F+R_{E1}))}
 \end{align}
 substituing values from \ref{table:ee18btech11007} gives
 \begin{align}
-    \frac{I_0}{V_c_2}=10.6mA/V
+    \frac{I_0}{V_{c2}}=10.6mA/V
 \end{align}
 combining the gains of the three stags results in
 \begin{align}
@@ -112,50 +111,50 @@ G=\frac{I_0}{V_i}=-14.92\times-131.2\times10.6\times10^-3=20.7A/V
 \end{align}
 which we note is very close to the approximate value found in \eqref{eq:eq1} and the voltage gain is found from 
 \begin{align}
-    \frac{V_0}{V_s}=\frac{-I_cR_c_3}{V_s}\approx\frac{-I_0R_C_3}{V_s}=-TR_C_3
+    \frac{V_0}{V_s}=\frac{-I_cR_{c3}}{V_s}\approx\frac{-I_0R_{C3}}{V_s}=-TR_{C3}
     \
 \end{align}
 \begin{align}
     =-83.7\times10^{-3}\times600=-50.2V/V
 \end{align}
-\item Find $R_i_n$ and $R_o_u_t$
+\item Find $R_{in}$ and $R_{out}$
 \\
 \solution
 \begin{align}
-    R_i_n =R_if=R_i(1+GH)
+    R_{in} =R_{if}=R_i(1+GH)
 \end{align}
 where $R_i$ is the input resistance of the G circuit.The value of $R_i$ can be found from the circuit in fig.\ref{fig:circuit3} as follows:
 \begin{align}
-    R_i=(h_f_e+1)(r_e_1+(R_E_1||(R_F+R_E_2)))=13.65K\Omega
+    R_i=(h_{fe}+1)(r_{e1}+(R_{E1}||(R_F+R_{E2})))=13.65K\Omega
 \end{align} 
 \begin{align}
-    R_i_f=13.65(1+20.7\times11.9)=3.38M\Omega
+    R_{if}=13.65(1+20.7\times11.9)=3.38M\Omega
 \end{align}
 \begin{align}
-    R_o_f=R_o(1+GH)
+    R_{of}=R_o(1+GH)
 \end{align}
 where $R_o$ can be determined to be 
  \begin{align}
-    R_o=(R_E_2||(R_F+R_E_1))+r_e_3+\frac{R_C_2}{h_f_e+1}
+    R_o=(R_{E2}||(R_F+R_{E1}))+r_{e3}+\frac{R_{C2}}{h_{fe}+1}
 \end{align}
-from values in Table \ref{table:ee18btech11007}, yields $R_o = 143.9 \Omega$. The output resistance $R_o_f$ of the feedback amplifier can now be found as
+from values in Table \ref{table:ee18btech11007}, yields $R_o = 143.9 \Omega$. The output resistance $R_{of}$ of the feedback amplifier can now be found as
 \begin{align}
-    R_o_f=R_o(1+GH)=143.9(1+20.7\times11.9)=35.6K\Omega
+    R_{of}=R_o(1+GH)=143.9(1+20.7\times11.9)=35.6K\Omega
 \end{align}
-$R_o_u_t$ is found by using circuit4 in fig.\ref{fig:circuit3}
+$R_{out}$ is found by using circuit4 in fig.\ref{fig:circuit3}
 \begin{align}
-    R_o_u_t=r_o3+[R_o_f||(r_\pi_3+R_C_2)](1+g_m_3r_o_3\frac{r_\pi_3}{r_\pi_3+R_C_2})
+    R_{out}=r_{o3}+[R_{of}||(r_{\pi3}+R_{C2})](1+g_{m3}r_{o3}\frac{r_{\pi3}}{r_{\pi3}+R_{C2}})
 \end{align}
 \begin{align}
 =25+[35.6||(5.625)][1+160\times25\frac{0.625}{5.625}]=2.19M\Omega \end{align}
 
-thus $R_o_u_t$ is increased (from $r_o_3$) but not by (1+GH)
+thus $R_{out}$ is increased (from $r_{o3}$) but not by (1+GH)
 \item put the obtained parameters in a table
 \\
 \solution 
 \begin{table}[!ht]
 \centering
-\input{./tables/EE18BTECH11007/table2.tex}
+\input{./tables/table2.tex}
 \caption{parameters}
 \label{table:parameters}
 \end{table}
@@ -165,7 +164,7 @@ thus $R_o_u_t$ is increased (from $r_o_3$) but not by (1+GH)
 \begin{figure}[!ht]
 	\begin{center}
 		
-		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/block_diagram.tex}}
+		\resizebox{\columnwidth}{!}{\input{blockdiagram}}
 	\end{center}
 \caption{block diagram}
 \label{fig:block_diagram}
