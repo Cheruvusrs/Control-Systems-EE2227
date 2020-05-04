@@ -1,15 +1,15 @@
 \begin{circuitikz}[american]
 \draw (0,0)--(-1,0)to [voltage source,l_=$V_i$]++(0,-2)to node[ground]{}++(0,-0.5) ++(6,0)
 (0.75,0) node[npn](npn1){Q1}
-(npn1.C)--++(0,0.5) to [R,l_=$R_{C1}$]++(0,1.25) to node[ground,rotate=180]{}++(0,0.25)
-(npn1.E)-- ++(0,-0.5) to [R,l_=$R_{E1}$]++(0,-1.25)to node[ground]{}++(0,-0.25)
-(npn1.E)++(0,-0.25)to [R,l_=$R_F$]++(3,0)to[R,l_=$R_{E2}$]++(0,-1.5)to node[ground]{} ++(0,-0.25)
- (3,0.75)node[npn](npn2){Q2}
-(npn1.C)--(npn2.B)
+(npn1.C)--++(0,1.5) to [R,l_=$R_{C1}$]++(0,1.5) to node[ground,rotate=180]{}++(0,0.25)
+(npn1.E)-- ++(0,-2) to [R,l_=$R_{E1}$]++(0,-1.5)to node[ground]{}++(0,-0.25)
+(npn1.E)++(0,-1)to [R,l_=$R_F$]++(3,0)to[R,l_=$R_{E2}$]++(0,-1.5)to node[ground]{} ++(0,-0.25)
+ (4.75,1.5)node[npn](npn2){Q2}
+(npn1.C)++(0,0.75)--(npn2.B)
 (npn2.E)to node[ground]{}++(0,0)
-(npn2.C)to[R,l_=$R_{C2}$]++(0,1.5)to node[ground,rotate=180]{}++(0,0.5)
-(6,1.5) node[npn](npn3){Q3}
-(npn2.C)--(npn3.B)
+(npn2.C)--++(0,1.5)to[R,l_=$R_{C2}$]++(0,1.5)to node[ground,rotate=180]{}++(0,0.5)
+(8.75,3) node[npn](npn3){Q3}
+(npn2.C)++(0,0.75)--(npn3.B)
 (npn3.C)to[R,l_=$R_{C3}$]++(0,1.5)to node[ground,rotate=180]{}++(0,0.25)
 (npn3.E)to[short,i_=$I_o$]++(0,-2)coordinate(a)to[R,l_=$R_{E2}$]++(0,-1.5)to node[ground]{}++(0,-0.25)
 (a)++(0,0.25)to[R,l_=$R_F$]++(3,0)to[R,l_=$R_{E1}$]++(0,-1.5)to node[ground]{}++(0,-0.25)
