@@ -1,7 +1,7 @@
 \begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
 \numberwithin{equation}{enumi}
 {\small
- \item Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} Assume the loop gain is large, find an approximate expression and value for the closed loop gain $T=\frac{I_0}{V_s}$ use values from Table
+ \item Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} ,Answer below questions using values from Table \ref{table:ee18btech11007}
  \begin{figure}[!ht]
 	\begin{center}
 		
@@ -10,7 +10,7 @@
 \caption{circuit1}
 \label{fig:circuit1}
 \end{figure}
- \ref{table:ee18btech11007}
+ 
 \begin{table}[!ht]
 \centering
 \input{./tables/EE18BTECH11007/table1.tex}
@@ -25,38 +25,6 @@
 \caption{circuit2}
 \label{fig:circuit2}
 \end{figure}
-\\
-\solution When GH $>>$1,
-\begin{align}
-    T =\frac{I_0}{V_s}\approx \frac{1}{H}
-\end{align}
-feedback factor H can be found from feedback network,The feedback network consists of resistors $R_{E1},R_F,R_{E2}$ using circuit2 in  fig.\ref{fig:circuit2} we get
-\begin{align}
-    H=\frac{V_f}{I_0}=\frac{R_{E2}}{R_{E2}+R_F+R_{E1}} \times R_{E1}
-\end{align}
-\begin{align}
-    =\frac{100}{100+640+100}\times 100=11.9\Omega
-\end{align}
-thus,
-\begin{align}
-    T\approx \frac{1}{H}
-\end{align}
-\begin{align}
-    =\frac{1}{R_{E2}}(1+\frac{R_{E2}+R_F}{R_{E1}})
-\end{align}
-\begin{align}
-    =\frac{1}{11.9}=84mA/V
-\end{align}
-\begin{align}
-\label{eq:eq1}
-    \frac{I_c}{V_s}\approx\frac{I_0}{V_s}=84 mA/V
-\end{align}
-\item Find Voltage gain $\frac{V_0}{V_s}$ for above approximation
-\\
-\solution 
-\begin{align}
-\frac{V_0}{V_s}=\frac{-I_c R_{C3}}{V_s}=-84\times0.6=-50.4V/V
-\end{align}
 \item use feedback analysis to find open loop gain G 
 \\
 \solution employing loading rules in fig.\ref{fig:circuit1},we obtain circuit3 given in fig.\ref{fig:circuit3}
@@ -102,14 +70,24 @@ substituing values from \ref{table:ee18btech11007} gives
 \end{align}
 combining the gains of the three stags results in
 \begin{align}
-G=\frac{I_0}{V_i}=-14.92\times-131.2\times10.6\times10^-3=20.7A/V    
+G=\frac{I_0}{V_i}=-14.92\times-131.2\times10.6\times10^{-3}=20.7A/V    
+\end{align}
+\item Find Feedback Factor H
+\\
+\solution feedback factor H can be found from feedback network,The feedback network consists of resistors $R_{E1},R_F,R_{E2}$ using circuit2 in  fig.\ref{fig:circuit2} we get
+\begin{align}
+    H=\frac{V_f}{I_0}=\frac{R_{E2}}{R_{E2}+R_F+R_{E1}} \times R_{E1}
+\end{align}
+\begin{align}
+   H =\frac{100}{100+640+100}\times 100=11.9\Omega
 \end{align}
 \item Find closed loop gain T and Voltage Gain $V_0/V_s$
 \\ \solution
  \begin{align}
+ \label{eq:EE18BTECH11007}
     T=\frac{I_0}{V_s}=\frac{G}{1+GH}=\frac{20.7}{1+20.7\times11.9}=83.7mA/V
 \end{align}
-which we note is very close to the approximate value found in \eqref{eq:eq1} and the voltage gain is found from 
+ the voltage gain is found from 
 \begin{align}
     \frac{V_0}{V_s}=\frac{-I_cR_{c3}}{V_s}\approx\frac{-I_0R_{C3}}{V_s}=-TR_{C3}
     \
@@ -117,7 +95,34 @@ which we note is very close to the approximate value found in \eqref{eq:eq1} and
 \begin{align}
     =-83.7\times10^{-3}\times600=-50.2V/V
 \end{align}
-\item Find $R_{in}$ and $R_{out}$
+\item Now assume Loop gain is large and find approximate expression for closed loop gain $T=\frac{I_o}{V_s}$
+\\
+\solution When GH $>>$1,
+\begin{align}
+    T =\frac{I_0}{V_s}\approx \frac{1}{H}
+\end{align}
+as
+\begin{align}
+    H=\frac{V_f}{I_0}=\frac{R_{E2}}{R_{E2}+R_F+R_{E1}} \times R_{E1}
+\end{align}
+\begin{align}
+    =\frac{100}{100+640+100}\times 100=11.9\Omega
+\end{align}
+thus,
+\begin{align}
+   T =\frac{1}{11.9}=84mA/V
+\end{align}
+\begin{align}
+ \frac{I_c}{V_s}\approx\frac{I_0}{V_s}=84 mA/V
+ \end{align}
+ which  we note is very close to the approximate value found in \eqref{eq:EE18BTECH11007} 
+\item Find Voltage gain $\frac{V_0}{V_s}$ for above approximation
+\\
+\solution 
+\begin{align}
+\frac{V_0}{V_s}=\frac{-I_c R_{C3}}{V_s}=-84\times0.6=-50.4V/V
+\end{align}
+\item Find $R_{in}$ and $R_{out}$ for circuit in  fig.\ref{fig:circuit1}
 \\
 \solution
 \begin{align}
