@@ -1,7 +1,7 @@
 \begin{circuitikz}[american]
 \usetikzlibrary{positioning, fit, calc}
 \draw (0,0)to [voltage source,v=$V_s$]++(0,-2)
-(0,0)to[R=$R_s$,i=$I_i$](6,0)to[R,v^>=${V}_f$,*-]++(0,-2)--++(-2,0)--++(0,-2)--++(4,0)to[controlled voltage source=$HI_o$]++(0,-2)--++(-6,0)--++(0,4)--++(-2,0)--(0,-2);
+(0,0)to[R=$R_s$,i=$I_i$](6,0)to[R,v^>=${V}_i$,*-]++(0,-2)--++(-2,0)--++(0,-2)--++(4,0)to[controlled voltage source=$HI_o$]++(0,-2)--++(-6,0)--++(0,4)--++(-2,0)--(0,-2);
 \draw (10,0) to [controlled current source=$GV_i$]++(0,-2)
 (10,0)--(12,0)to[R=$R_o$]++(0,-2)--(14,-2)--(14,-4)--(12,-4)--(12,-6)--++(4,0)--++(0,4)--++(2,0)to[R=$R_L$]++(0,2)to [short,i=$I_o$](12,0)
 (10,-2)--(12,-2)
