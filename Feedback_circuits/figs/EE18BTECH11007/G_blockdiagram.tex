@@ -1,5 +1,8 @@
-\begin{circuitikz}{american}
-\draw (0,0)node[npn](npn1){Q3} ++(5,0)
-(npn1.B)to[R,l_=$R_C_2$]++(-2,0) -- ++(0,-1)to node[ground]++(0,-0.25)
-(npn1.E)to[R,l_=$R_o_f$]++(0,-1.5)to node[ground]++(0,-0.25)
-;\end{circuitikz}
+\begin{circuitikz}[american]
+\usetikzlibrary{positioning, fit, calc}
+\draw (0,0)to [voltage source,v=$V_s$]++(0,-2)to[R=$R_{11}$]++(6,0)
+(0,0)to[R=$R_s$]++(6,0);
+\draw (8,-1)node[draw,minimum width=4cm,minimum height=4cm] (load) {Basic Amplifier}(8,0)
+(10,0)--++(6,0)to[R=$R_{L}$]++(0,-2)to [R=$R_{22}$,i<=$I_O$](10,-2)
+;
+\end{circuitikz}
