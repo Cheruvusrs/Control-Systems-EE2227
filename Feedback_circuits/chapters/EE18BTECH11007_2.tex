@@ -1,7 +1,58 @@
 \begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
 \numberwithin{equation}{enumi}
 {\small
- \item Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} ,Answer below questions using values from Table \ref{table:ee18btech11007}
+\item draw the block diagram of a Feedback Trans-conductance Amplifier(series-series)
+\\
+\solution below figure gives us the required block diagram 
+ \begin{figure}[!ht]
+	\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/amplifier_blockdiagram.tex}}
+	\end{center}
+\caption{Transconductance Amplifier}
+\label{fig:trans-conductance_blockdiagram}
+\end{figure}
+\item draw the equivalent amplifier circuit block diagram of fig.\ref{fig:trans-conductance_blockdiagram} 
+\\
+\solution 
+\begin{figure}[!ht]
+	\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/G_blockdiagram.tex}}
+	\end{center}
+\caption{G  block diagram}
+\label{fig:G_blockdiagram}
+\end{figure}
+\begin{align}
+    G=\frac{I_o}{V_i}
+\end{align}
+$R_{11}$ and $R_{22}$ are  obtained from 
+\begin{figure}[!ht]
+	\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/feedback_network.tex}}
+	\end{center}
+\caption{feedback network}
+\label{fig:feedback_network}
+\end{figure}
+
+
+\item draw the equivalent feedback circuit block diagram of fig.\ref{fig:trans-conductance_blockdiagram}
+\\
+\solution 
+\begin{figure}[!ht]
+	\begin{center}
+		
+		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/H_blockdiagram.tex}}
+	\end{center}
+\caption{H block diagram}
+\label{fig:H_blockdiagram}
+\end{figure}
+\begin{align}
+    H=\frac{V_f}{I_o}|_{I_{1}=0} 
+\end{align}
+
+ \item Part of the circuit of the MC1553 Amplifier is shown in circuit1 in  fig.\ref{fig:circuit1} ,Answer below questions using equivalent block diagrams in fig.\ref{fig:trans-conductance_blockdiagram} and  values from Table \ref{table:ee18btech11007}
  \begin{figure}[!ht]
 	\begin{center}
 		
@@ -27,7 +78,7 @@
 \end{figure}
 \item use feedback analysis to find open loop gain G 
 \\
-\solution employing loading rules in fig.\ref{fig:circuit1},we obtain circuit3 given in fig.\ref{fig:circuit3}
+\solution employing equivalent amplifier block diagram fig.\ref{fig:G_blockdiagram} into circuit in  fig.\ref{fig:circuit1},we obtain circuit3 given in fig.\ref{fig:circuit3}
  \begin{figure}[!ht]
 	\begin{center}
 		
@@ -74,7 +125,7 @@ G=\frac{I_0}{V_i}=-14.92\times-131.2\times10.6\times10^{-3}=20.7A/V
 \end{align}
 \item Find Feedback Factor H
 \\
-\solution feedback factor H can be found from feedback network,The feedback network consists of resistors $R_{E1},R_F,R_{E2}$ using circuit2 in  fig.\ref{fig:circuit2} we get
+\solution employing  the equivalent feedback circuit block diagram we get circuit2  in  fig.\ref{fig:circuit2} 
 \begin{align}
     H=\frac{V_f}{I_0}=\frac{R_{E2}}{R_{E2}+R_F+R_{E1}} \times R_{E1}
 \end{align}
