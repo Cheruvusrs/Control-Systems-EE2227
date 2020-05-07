@@ -214,12 +214,12 @@ $R_{out}$ is found by using circuit4 in fig.\ref{fig:circuit3}
 thus $R_{out}$ is increased (from $r_{o3}$) but not by (1+GH)
 \item put the obtained parameters in a table
 \\
-\solution 
+\solution \ref{table:parameters2} table gives us the calculated values
 \begin{table}[!ht]
 \centering
 \input{./tables/EE18BTECH11007/table2.tex}
-\caption{parameters}
-\label{table:parameters}
+\caption{calculated parameters}
+\label{table:parameters2}
 \end{table}
 \item Represent this amplifier in  a control system Block Diagram
 \\
@@ -232,11 +232,11 @@ thus $R_{out}$ is increased (from $r_{o3}$) but not by (1+GH)
 \caption{block diagram}
 \label{fig:block_diagram}
 \end{figure}
-\item write a code for doing calculations and verify the values obtained in \ref{table:parameters} 
+\item write a code for doing calculations and verify the values obtained in \ref{table:parameters2} 
 \\
 \solution 
 following code does all the calculations of above equations to give parameters in
-\ref{table:parameters} 
+\ref{table:parameters2} 
 \begin{lstlisting}
 codes/ee18btech11007/circuit_calc.py
 \end{lstlisting}
