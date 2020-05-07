@@ -2,4 +2,7 @@
 \draw (0,0)node[npn](npn1){Q3} ++(5,0)
 (npn1.B)to[R,l_=$R_{C2}$]++(-2,0) -- ++(0,-1)to node[ground]{}++(0,-0.25)
 (npn1.E)to[R,l_=$R_{of}$]++(0,-1.5)to node[ground]{}++(0,-0.25)
+(npn1.C)--++(0,1);
+\draw (npn1.E)++(2,2)node[label={right:$R_{out}$}]{}--++(-1.8,0)--++(0,-0.5)[->]
+
 ;\end{circuitikz}
