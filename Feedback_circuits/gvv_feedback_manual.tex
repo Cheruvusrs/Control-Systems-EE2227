@@ -33,7 +33,7 @@
 \usepackage{mathtools}
 \usepackage{steinmetz}
 \usepackage{tikz}
-\usepackage{circuitikz}
+\usepackage[american]{circuitikz}
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
@@ -250,12 +250,23 @@ Control Systems
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 \begin{abstract}
-This manual is an introduction to control systems based on GATE problems.Links to sample Python codes are available in the text.  
+This manual is an introduction to control systems in feedback circuits. Links to sample Python codes are available in the text.  
 \end{abstract}
 Download python codes using 
 \begin{lstlisting}
-svn co https://github.com/gadepall/school/trunk/control/codes
+svn co https://github.com/gadepall/school/trunk/control/feedback/codes
 \end{lstlisting}
-\section{Feedback Circuits}
+\section{Feedback Transconductance Amplifier: Series-Series}
 \input{./chapters/EE18BTECH11007_2.tex}
+\section{Feedback Voltage Amplifier: Series-Shunt}
+%\input{./chapters/ee18btech11005.tex}
+%
+%\section{Feedback Current Amplifier: Shunt-Series}
+%\input{./chapters/ee18btech11021.tex}
+%
+\section{Feedback Current Amplifier: Shunt-Series}
+\subsection{Ideal Case}
+%\input{./chapters/ee18btech11014.tex}
+\subsection{Practical Case}
+%\input{./chapters/ee18btech11014_1.tex}
 \end{document}
