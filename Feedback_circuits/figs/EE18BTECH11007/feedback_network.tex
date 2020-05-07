@@ -4,9 +4,10 @@
 (0,0)to[short,i=$I_1$]++(3,0);
 \draw (5,-1)node[draw,minimum width=4cm,minimum height=4cm] (load) {Feedback Network}(8,0)
 (7,0)--(10,0)
-(7,-2)--(10,-2)
-(0,-1)node[label={right:$R_{11}$}]{}
-(10,-1)node[label={right:$R_{22}$}]{} ++(4,0)
-
+(7,-2)--(10,-2);
+\draw(-1,-1)node[label={above:$R_{11}$}]{}--++(1,0)[->];
+\draw (11,-1)node[label={right:$R_{22}$}]{} --++(-1,0)[->];
+\draw
+++(4,0)
 ;
 \end{circuitikz}
