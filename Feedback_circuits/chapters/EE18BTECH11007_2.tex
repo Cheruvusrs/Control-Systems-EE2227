@@ -3,24 +3,27 @@
 {\small
 \item draw the block diagram of a Feedback Trans-conductance Amplifier(series-series)
 \\
-\solution below figure gives us the required block diagram 
- \begin{figure}[!ht]
+\solution fig.\ref{fig:trans-conductance_blockdiagram} gives us the required block diagram 
+\begin{align}
+    T=\frac{I_o}{V_s}=\frac{G}{1+GH}
+\end{align}
+\begin{figure}[!ht]
 	\begin{center}
 		
 		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/amplifier_blockdiagram.tex}}
 	\end{center}
-\caption{Transconductance Amplifier}
+\caption{Feedback Transconductance Amplifier}
 \label{fig:trans-conductance_blockdiagram}
 \end{figure}
 \item draw the equivalent amplifier circuit block diagram of fig.\ref{fig:trans-conductance_blockdiagram} 
 \\
-\solution 
+\solution fig.\ref{fig:G_blockdiagram} gives the required block diagram 
 \begin{figure}[!ht]
 	\begin{center}
 		
 		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/G_blockdiagram.tex}}
 	\end{center}
-\caption{G  block diagram}
+\caption{Amplifier circuit  block diagram}
 \label{fig:G_blockdiagram}
 \end{figure}
 \begin{align}
@@ -39,13 +42,13 @@ $R_{11}$ and $R_{22}$ are  obtained from fig.\ref{fig:feedback_network}
 
 \item draw the equivalent feedback circuit block diagram of fig.\ref{fig:trans-conductance_blockdiagram}
 \\
-\solution 
+\solution fig.\ref{fig:H_blockdiagram} gives the required block diagram
 \begin{figure}[!ht]
 	\begin{center}
 		
 		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/H_blockdiagram.tex}}
 	\end{center}
-\caption{H block diagram}
+\caption{Feedback circuit block diagram}
 \label{fig:H_blockdiagram}
 \end{figure}
 \begin{align}
@@ -73,18 +76,28 @@ $R_{11}$ and $R_{22}$ are  obtained from fig.\ref{fig:feedback_network}
 		
 		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit2.tex}}
 	\end{center}
-\caption{circuit2}
+\caption{H circuit}
 \label{fig:circuit2}
 \end{figure}
-\item use feedback analysis to find open loop gain G 
+\item feedback analysis to find open loop gain G 
 \\
-\solution employing equivalent amplifier block diagram fig.\ref{fig:G_blockdiagram} into circuit in  fig.\ref{fig:circuit1},we obtain circuit3 given in fig.\ref{fig:circuit3}
+\solution employing equivalent amplifier block diagram fig.\ref{fig:G_blockdiagram} into circuit in  fig.\ref{fig:circuit1}, $R_{11}$ and $R_{22}$ are found from feedback circuit in fig.\ref{fig:circuit2} using rule from fig.\ref{fig:feedback_network} we finally obtain
+\begin{align}
+    R_s,R_L=0
+\end{align}
+\begin{align}
+    R_{11}=R_{E1}||(R_F+R_{E2})
+\end{align}
+\begin{align}
+    R_{22}=R_{E2}||(R_F+R_{E1})
+\end{align}
+ finally Amplifier circuit is obtained shown in fig.\ref{fig:circuit3}
  \begin{figure}[!ht]
 	\begin{center}
 		
 		\resizebox{\columnwidth}{!}{\input{./figs/EE18BTECH11007/circuit3.tex}}
 	\end{center}
-\caption{circuit3}
+\caption{G circuit}
 \label{fig:circuit3}
 \end{figure}
 \begin{figure}[!ht]
